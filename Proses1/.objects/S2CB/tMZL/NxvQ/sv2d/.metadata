@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Process",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "sv2d4DiWW0GV3LsgPOU6uA",
+  "Reference": "DhLAqv2it0qS1Kk1mE7jqw/sv2d4DiWW0GV3LsgPOU6uA",
+  "ParentRef": "DhLAqv2it0qS1Kk1mE7jqw/NxvQVIdpgU2GLxO4i-3RQg",
+  "Created": "2025-11-28T13:51:06.145515Z",
+  "Updated": "2025-11-28T13:51:06.145515Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

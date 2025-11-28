@@ -1,0 +1,11 @@
+# ChangeLog
+
+## Versi 1.0.1 – 28 November 2025
+### Perubahan Utama
+- Menambahkan beberapa path konfigurasi pada **Config.xlsx** (sheet Settings).
+- Mengubah beberapa nama variabel di framework agar konsisten dengan nama di **Config.xlsx**.
+- Menambahkan aktivitas **Read Queue Item** di `Process.xaml` untuk membaca transaksi dari Orchestrator Queue.
+- Menambahkan proses browser menggunakan **Edge**:
+  - Aksi: klik tombol **Proses** ketika status PO masih **Open**.
+- Menambahkan blok **Try-Catch** di `Process.xaml` untuk meningkatkan robustness dan penanganan error.
+- Menambahkan proses untuk mengenerate output

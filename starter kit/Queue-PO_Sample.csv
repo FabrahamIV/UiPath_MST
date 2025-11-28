@@ -1,0 +1,11 @@
+Reference,PO_Number,Vendor_Name,Vendor_Email,Amount,Currency,Due_Date,Attachment_Path
+QPO-001,PO-2025001,PT Samudera Tech,billing@samuderatech.id,7611.86,IDR,2025-11-28,
+QPO-002,PO-2025002,PT Nusantara Makmur,vendor.nusantara@example.com,26527697.64,USD,2025-11-29,
+QPO-003,PO-2025003,PT Samudera Tech,billing@samuderatech.id,32817703.47,IDR,2025-12-11,
+QPO-004,PO-2025004,PT Cendana Global,finance@cendanaglobal.com,29001387.46,IDR,2025-12-09,
+QPO-005,PO-2025005,PT Merapi Digital,accounting@merapidigital.id,2501.21,IDR,2025-12-10,
+QPO-006,PO-2025006,PT Cendana Global,finance@cendanaglobal.com,26463108.81,IDR,2025-11-29,
+QPO-007,PO-2025007,PT Samudera Tech,billing@samuderatech.id,27338489.74,IDR,2025-12-09,
+QPO-008,PO-2025008,PT Nusantara Makmur,vendor.nusantara@example.com,43522578.9,IDR,2025-11-29,
+QPO-009,PO-2025009,PT Cendana Global,finance@cendanaglobal.com,37631114.19,IDR,2025-12-02,
+QPO-010,PO-2025010,PT Samudera Tech,billing@samuderatech.id,7095.89,IDR,2025-12-11,

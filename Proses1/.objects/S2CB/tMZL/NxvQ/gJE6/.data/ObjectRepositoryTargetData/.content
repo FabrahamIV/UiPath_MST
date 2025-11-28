@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="4fDrKUAA8U6J0mwCNmEm-g" Reference="DhLAqv2it0qS1Kk1mE7jqw/gJE6hsewqkaGCej5W27nJw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="newtab" CVScreenId="fb5a93a4-66e8-43ae-9370-85cdcd998c43" CvElementArea="72, 43, 2265, 36" CvType="InputBox" DesignTimeRectangle="133, 48, 2169, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='New tab - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='App bar' role='tool bar' /&gt;&lt;ctrl name='Address and search bar' role='editable text' /&gt;" Guid="0b67ebbc-411b-4bc3-94d3-a38f0f46e61c" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' omit:title='New tab - Profile 1 - Microsoft​ Edge' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="d136f2e27c613f868b8ecafd4f55d7b5.png" xmlns="">0i5fKnzhJlkiN7iz6ChWtLw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

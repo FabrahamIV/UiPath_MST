@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="60uNW2wZq0axylShxza_-g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="" CVScreenId="746728ad-5fc0-4a7b-9b00-21016120b1cb" CvType="AnyWordGroup" DesignTimeRectangle="1258, 276, 724, 38" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='workTable' tag='TABLE' /&gt;&lt;webctrl tableCol='3' tableRow='{0}' tag='TD' /&gt;&quot;, countNumber)]" Guid="fecaa039-65ff-4911-b5c6-bf896dd2d76d" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Work Items (Modern Mock)' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="83143bd7f305f779d4cbccd705bb81e8.png" xmlns="">0UiiDjUKimkCwVS27vtPc1A</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="*" Name="countNumber" />
+    </scg:List>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,91 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CreateConfigFile" this:CreateConfigFile.in_ConfigSheets="[Nothing]" this:CreateConfigFile.in_ConfigFile="[Nothing]" this:CreateConfigFile.in_LogAssetFail="[Nothing]" this:CreateConfigFile.in_AssetSheetName="[Nothing]" this:CreateConfigFile.in_LogAssetUnDef="[Nothing]" this:CreateConfigFile.in_ConfigNameCol="[Nothing]" this:CreateConfigFile.in_ConfigAssetCol="[Nothing]" this:CreateConfigFile.in_ConfigValCol="[Nothing]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="The configuration data from the process Config file" Name="io_Config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property sap2010:Annotation.AnnotationText="The sheets containing the configuration data from the Config file (this does not include the Assets and Credentials sheets)" Name="in_ConfigSheets" Type="InArgument(s:String[])" />
+    <x:Property sap2010:Annotation.AnnotationText="The path to the process Config file" Name="in_ConfigFile" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="The message to display when the asset fails to load." Name="in_LogAssetFail" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="The name of the sheet in the Config file containing the assets" Name="in_AssetSheetName" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="The message to display if the asset specified is undefined" Name="in_LogAssetUnDef" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="The name of the &quot;Name&quot; column in the Config file" Name="in_ConfigNameCol" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="The name of the &quot;Asset&quot; column in the Config file" Name="in_ConfigAssetCol" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="The name of the &quot;Value&quot; column in the Config file" Name="in_ConfigValCol" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>583,606</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="10">
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>GlobalVariablesDmuDt2nLQ8</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Create the config dictionary if it contains no data yet.  This is in place for retry cases.&#xA;&#xA;Preconditions: The config directory must be correctly set.&#xA;&#xA;Postconditions:The Config dictionary will be loaded with the key/value pairs from the config file." DisplayName="CreateConfigFile" sap:VirtualizedContainerService.HintSize="1865,902.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_25">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="The number of items in the Config dictionary" Default="[io_Config.Count]" Name="TotalConfigItems" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <If Condition="[TotalConfigItems &lt;= 0]" DisplayName="If first run - read Config file" sap:VirtualizedContainerService.HintSize="452,417" sap2010:WorkflowViewState.IdRef="If_11">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="First Run" sap:VirtualizedContainerService.HintSize="450,197" sap2010:WorkflowViewState.IdRef="Sequence_24">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitAllSettings workflow" sap:VirtualizedContainerService.HintSize="416,137" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Framework/Init-End/InitAllSettings.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">[in_ConfigFile]</InArgument>
+              <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">[in_ConfigSheets]</InArgument>
+              <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[io_Config]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_LogAssetFail">[in_LogAssetFail]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_AssetSheetName">[in_AssetSheetName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_LogAssetUnDef">[in_LogAssetUnDef]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ConfigNameCol">[in_ConfigNameCol]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ConfigAssetCol">[in_ConfigAssetCol]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ConfigValCol">[in_ConfigValCol]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+    </If>
+  </Sequence>
+</Activity>

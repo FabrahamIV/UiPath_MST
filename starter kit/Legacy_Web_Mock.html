@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Work Items (Legacy Mock)</title>
+  <style>
+    body { font-family: Tahoma, Arial, sans-serif; margin: 20px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #999; padding: 6px; }
+    th { background: #e0e0e0; }
+    .label { font-weight: bold; }
+    .statusOpen { color: #c0392b; font-weight: bold; }
+    .statusProcessed { color: #27ae60; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1 id="ctl00_ContentPlaceHolder1_lblTitle">Work Items</h1>
+  <div id="ctl00_ContentPlaceHolder1_divFilter">
+    <span class="label">Type:</span> <span id="ctl00_ContentPlaceHolder1_txtType">Invoice</span>
+    <span class="label">Status:</span> <span id="ctl00_ContentPlaceHolder1_txtStatus">Open</span>
+  </div>
+
+  <table id="ctl00_ContentPlaceHolder1_tblWork">
+    <thead>
+      <tr><th>Id</th><th>Type</th><th>Status</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span id="ctl00_ContentPlaceHolder1_itm_001">itm-001</span></td>
+        <td>Invoice</td>
+        <td><span id="ctl00_ContentPlaceHolder1_status_001" class="statusOpen">Open</span></td>
+        <td><button id="ctl00_ContentPlaceHolder1_btn_001">Process</button></td>
+      </tr>
+      <tr>
+        <td><span id="ctl00_ContentPlaceHolder1_itm_002">itm-002</span></td>
+        <td>Invoice</td>
+        <td><span id="ctl00_ContentPlaceHolder1_status_002" class="statusOpen">Open</span></td>
+        <td><button id="ctl00_ContentPlaceHolder1_btn_002">Process</button></td>
+      </tr>
+      <tr>
+        <td><span id="ctl00_ContentPlaceHolder1_itm_003">itm-003</span></td>
+        <td>Request</td>
+        <td><span id="ctl00_ContentPlaceHolder1_status_003" class="statusProcessed">Processed</span></td>
+        <td><button id="ctl00_ContentPlaceHolder1_btn_003">Process</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function process(id) {
+      var status = document.getElementById('ctl00_ContentPlaceHolder1_status_' + id);
+      if(status){
+        status.textContent = 'Processed';
+        status.className = 'statusProcessed';
+      }
+    }
+    document.addEventListener('click', function(e){
+      if(e.target && e.target.id && e.target.id.indexOf('ctl00_ContentPlaceHolder1_btn_')===0){
+        var id = e.target.id.split('_').pop();
+        process(id);
+      }
+    });
+  </script>
+</body>
+</html>

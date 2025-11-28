@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Nb-pO7q2AUGGR9l3bbfSLQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="" CVScreenId="746728ad-5fc0-4a7b-9b00-21016120b1cb" CvElementArea="1989, 283, 67, 24" CvTextArea="1997, 288, 50, 13" CvTextArgument="Process" CvType="Button" DesignTimeRectangle="1990, 285, 65, 21" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='workTable' tag='TABLE' /&gt;&lt;webctrl tableRow='{0}' tag='BUTTON' tableCol='4' /&gt;&quot;, countNumber)]" Guid="75890061-de92-4335-9d99-4b12ec839615" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Work Items (Modern Mock)' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="9c17e04499dae8194788bb6c0f12a117.png" xmlns="">0XGeEtOUt8060m0YD7sjGqw</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="*" Name="countNumber" />
+    </scg:List>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

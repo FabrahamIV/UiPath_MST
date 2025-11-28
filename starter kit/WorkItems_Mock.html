@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Work Items (Modern Mock)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background: #f0f0f0; }
+    .badge { padding: 2px 6px; border-radius: 4px; color: #fff; }
+    .status-open { background: #c0392b; }
+    .status-processed { background: #27ae60; }
+    #toast { position: fixed; bottom: 20px; right: 20px; background: #333; color:#fff; padding:10px; border-radius:6px; display:none; }
+  </style>
+</head>
+<body>
+  <h1>Work Items</h1>
+  <p>Filter: <span id="filterType">Invoice</span> / <span id="filterStatus">Open</span></p>
+  <table id="workTable">
+    <thead>
+      <tr><th>Id</th><th>Type</th><th>Status</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <div id="toast">Updated</div>
+
+  <script>
+    function randId() {
+      return 'itm-' + Math.random().toString(36).substring(2, 8);
+    }
+    const data = [
+      {type: 'Invoice', status: 'Open'},
+      {type: 'Invoice', status: 'Open'},
+      {type: 'Invoice', status: 'Processed'},
+      {type: 'Request', status: 'Open'},
+      {type: 'Invoice', status: 'Open'}
+    ];
+    const tbody = document.querySelector('#workTable tbody');
+    data.forEach(row => {
+      const id = randId();
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td data-col="Id"><span class="id" data-id="${id}">${id}</span></td>
+        <td data-col="Type">${row.type}</td>
+        <td data-col="Status"><span class="badge ${row.status==='Open'?'status-open':'status-processed'}">${row.status}</span></td>
+        <td data-col="Action"><button class="btn-process" aria-label="Process item">Process</button></td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    document.addEventListener('click', function(e){
+      if(e.target && e.target.classList.contains('btn-process')){
+        const row = e.target.closest('tr');
+        const statusCell = row.querySelector('[data-col="Status"] .badge');
+        statusCell.textContent = 'Processed';
+        statusCell.classList.remove('status-open');
+        statusCell.classList.add('status-processed');
+        const toast = document.getElementById('toast');
+        toast.textContent = 'Processed by RPA';
+        toast.style.display = 'block';
+        setTimeout(() => toast.style.display = 'none', 1500);
+      }
+    });
+  </script>
+</body>
+</html>
